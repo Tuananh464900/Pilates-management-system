@@ -25,7 +25,7 @@ public class SupabaseAuthService {
     @Value("${supabase.service-role-key:}")
     private String serviceRoleKey;
 
-    @Value("${supabase.anon-key:sb_publishable_19WTRrlZSnWRMEgsSWgqqw_t-R--vzc}")
+    @Value("${supabase.anon-key:}")
     private String anonKey;
 
     @Value("${app.security.mock-login-enabled:false}")

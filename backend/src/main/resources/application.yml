@@ -31,7 +31,7 @@ supabase:
   url: ${SUPABASE_URL:https://example.supabase.co}
   jwt-secret: ${SUPABASE_JWT_SECRET:}
   service-role-key: ${SUPABASE_SERVICE_ROLE_KEY:}
-  anon-key: ${SUPABASE_ANON_KEY:sb_publishable_19WTRrlZSnWRMEgsSWgqqw_t-R--vzc}
+  anon-key: ${SUPABASE_ANON_KEY:}
 
 app:
   security:
