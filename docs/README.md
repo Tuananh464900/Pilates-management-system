@@ -108,7 +108,7 @@ Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò vớ
 
 ---
 
-## 5. Tiến độ Triển khai 5 Nhóm Ca Sử Dụng (Hoàn thành 100%)
+## 5. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)
 
 Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tài liệu Đặc tả Phân tích Thiết kế (SAD):
 
