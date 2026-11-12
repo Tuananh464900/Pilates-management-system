@@ -37,7 +37,7 @@ Hệ thống **Glow Pilates** cung cấp giải pháp chuyển đổi số toàn
 | STT | Họ và tên | Mã sinh viên | Vai trò trong dự án | GitHub |
 | :---: | :--- | :---: | :--- | :---: |
 | 1 | **Hồ Tuấn Anh** | **24100464** | Nhóm trưởng, Phân tích Use Case & Lập trình Backend | [@Tuananh464900](https://github.com/Tuananh464900) |
-| 2 | **Đỗ Thanh Bình** | **24100465** | Thành viên, Phân tích Use Case & Lập trình Frontend | Thành viên |
+| 2 | **Đỗ Thanh Bình** | **24100465** | Thành viên, Phân tích Use Case & Lập trình Frontend | [@dtbinh3406](https://github.com/dtbinh3406) |
 
 - **Giảng viên hướng dẫn:** TS. Mai Thuý Nga
 - **Lớp tín chỉ:** CSE703048-1-1-26(N06)
