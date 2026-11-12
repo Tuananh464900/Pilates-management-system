@@ -135,14 +135,17 @@ Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tà
 - [x] **UC3.5:** Theo dõi chi tiết lịch sử giao dịch và hóa đơn thanh toán của hội viên.
 
 ###  Nhóm UC4: Đặt chỗ & Hủy lịch tập (100%)
-- [x] **UC4.1:** Hội viên đặt chỗ buổi tập: Áp dụng **Khóa bi quan (Pessimistic Locking)** chống Race Condition khi nhiều người cùng đặt chỗ cuối, trừ 1 lượt nguyên tử.
-- [x] **UC4.2:** Hội viên hủy đặt chỗ: Áp dụng **Biên thời gian 2 giờ** (Hủy trước $\ge 2$ tiếng được hoàn trả 1 lượt về đúng gói; hủy trong vòng 2 tiếng sát giờ không hoàn lượt).
-- [x] **UC4.3:** Trainer và Admin theo dõi danh sách học viên đã giữ chỗ của từng buổi tập.
+- [x] **UC4.1:** Xem danh sách buổi tập đang mở (chỉ hiển thị buổi chưa bắt đầu, cho phép đăng ký).
+- [x] **UC4.2:** Hội viên đặt chỗ buổi tập: Áp dụng **Khóa bi quan (Pessimistic Locking)** chống Race Condition khi nhiều người cùng đặt chỗ cuối, trừ 1 lượt nguyên tử.
+- [x] **UC4.3:** Xem danh sách các buổi tập đã đặt chỗ của cá nhân Hội viên.
+- [x] **UC4.4:** Hội viên hủy đặt chỗ: Áp dụng **Biên thời gian 2 giờ** (Hủy trước $\ge 2$ tiếng được hoàn trả 1 lượt về đúng gói; hủy trong vòng 2 tiếng sát giờ không hoàn lượt).
+- [x] **UC4.5:** Xem thông báo xác nhận và cảnh báo trạng thái đặt/hủy chỗ trên giao diện người dùng.
 
 ###  Nhóm UC5: Điểm danh & Báo cáo Thống kê (100%)
-- [x] **UC5.1:** HLV điểm danh học viên tại buổi tập (Có mặt / Vắng mặt). Học viên vắng mặt không được hoàn lại buổi tập.
-- [x] **UC5.2:** Báo cáo Thống kê KPI Giảng dạy dành cho Huấn luyện viên (tổng số buổi đứng lớp, tỷ lệ chuyên cần của học viên).
-- [x] **UC5.3:** Dashboard Báo cáo Doanh thu & Vận hành dành cho Quản trị viên (tính doanh thu thực nhận từ đơn `PAID`, tỷ lệ lấp đầy lớp, tổng số hội viên active).
+- [x] **UC5.1:** Xem danh sách học viên đã đặt chỗ của từng buổi tập (dành cho HLV phụ trách & Admin).
+- [x] **UC5.2:** HLV / Admin điểm danh học viên tại buổi tập (Có mặt / Vắng mặt). Học viên vắng mặt không được hoàn lại buổi tập.
+- [x] **UC5.3:** Học viên theo dõi lịch sử tập luyện và kết quả điểm danh cá nhân (`ATTENDED` / `ABSENT`).
+- [x] **UC5.4:** Dashboard Báo cáo Doanh thu & Thống kê dành cho Quản trị viên (bộ lọc tháng/năm, doanh thu thực nhận từ đơn `PAID`, tỷ lệ lấp đầy lớp, tổng số hội viên active).
 
 ---
 
