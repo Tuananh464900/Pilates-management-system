@@ -245,3 +245,5 @@ Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn quản trị cơ sở
 - [5] **Tài liệu Tham khảo Công nghệ:** Spring Boot 3.3 Reference, React Quick Start, PostgreSQL 16 Docs.
 - [6] **Mẫu Báo cáo Môn học:** `SAD_ReportTemplate_1_2026`
 - [7] **Tài liệu Hướng dẫn Bài tập Thực hành:** `IBM_ex_workbook_new`
+- [8] **Giáo trình Phân tích Thiết kế Hệ thống (SAD):** `Alan Dennis, Barbara Wixom, David Tegarden - Systems Analysis and Design_ An Object-Oriented Approach with UML-Wiley (2020).pdf`
+- [9] **Sách Tham khảo Mẫu Thiết kế (Design Patterns):** `[O'Reilly. Head First] - Head First Design Patterns 2nd Edition - [Freeman].pdf`
