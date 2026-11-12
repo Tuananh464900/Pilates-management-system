@@ -18,8 +18,7 @@ Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng ki�
 - [7. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)](#7-tiến-độ-triển-khai-5-nhóm-use-cases-hoàn-thành-100)
 - [8. Kiểm thử Tự động (Automated Testing)](#8-kiểm-thử-tự-động-automated-testing)
 - [9. Quy tắc Di trú Database (Flyway Migration Policy & History)](#9-quy-tắc-di-trú-database-flyway-migration-policy--history)
-- [10. Lưu ý Bảo mật khi Đưa lên GitHub](#10-lưu-ý-bảo-mật-khi-đưa-lên-github)
-- [11. Tài liệu Tham khảo](#11-tài-liệu-tham-khảo)
+- [10. Tài liệu Tham khảo](#10-tài-liệu-tham-khảo)
 
 ---
 
@@ -239,16 +238,7 @@ Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn quản trị cơ sở
 
 ---
 
-## 10. Lưu ý Bảo mật khi Đưa lên GitHub
-
-Dự án đã được cấu hình sẵn file [`.gitignore`](file:///d:/quan-ly-pilates/.gitignore) ở thư mục gốc:
-1. **Tuyệt đối không commit file `.env`**: File `backend/.env` và `frontend/.env` chứa mật khẩu kết nối database Supabase và JWT Secret đã được tự động loại trừ 100%. Luôn dùng `.env.example` làm mẫu cấu hình.
-2. **Không commit thư mục build**: `backend/target/`, `frontend/dist/`, `frontend/node_modules/` đã được chặn tự động.
-3. **Các tài liệu Word/PDF và thư mục xuất nộp bài**: `N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/` và các file `*.zip`, `*.docx` đã được loại trừ để giữ repository nhẹ và sạch.
-
----
-
-## 11. Tài liệu Tham khảo
+## 10. Tài liệu Tham khảo
 
 - [1] **Báo cáo SAD Hoàn chỉnh Tuần 12:** [`docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx`](file:///d:/quan-ly-pilates/docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx)
 - [2] **Đặc tả 25 Use Cases & Kế hoạch Kỹ thuật:** [`docs/IMPLEMENTATION_PLAN.md`](file:///d:/quan-ly-pilates/docs/IMPLEMENTATION_PLAN.md)
