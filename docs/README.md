@@ -15,7 +15,7 @@ Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng ki�
 - [4. Cấu trúc thư mục Monorepo](#4-cấu-trúc-thư-mục-monorepo)
 - [5. Hướng dẫn Khởi chạy Hệ thống](#5-hướng-dẫn-khởi-chạy-hệ-thống)
 - [6. Tài khoản Kiểm thử Đăng nhập](#6-tài-khoản-kiểm-thử-đăng-nhập)
-- [7. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)](#7-tiến-độ-triển-khai-5-nhóm-use-cases-hoàn-thành-100)
+- [7. Tiến độ Triển khai 5 Nhóm Use Cases](#7-tiến-độ-triển-khai-5-nhóm-use-cases)
 - [8. Kiểm thử Tự động (Automated Testing)](#8-kiểm-thử-tự-động-automated-testing)
 - [9. Quy tắc Di trú Database (Flyway Migration Policy & History)](#9-quy-tắc-di-trú-database-flyway-migration-policy--history)
 - [10. Tài liệu Tham khảo](#10-tài-liệu-tham-khảo)
@@ -150,11 +150,11 @@ Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò vớ
 
 ---
 
-## 7. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)
+## 7. Tiến độ Triển khai 5 Nhóm Use Cases
 
 Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tài liệu Đặc tả Phân tích Thiết kế (SAD):
 
-### Nhóm UC1: Quản lý Tài khoản & Hồ sơ (6 Use Cases - 100%)
+### Nhóm UC1: Quản lý Tài khoản & Hồ sơ
 - [x] **UC1.1:** Đăng ký hội viên công khai (luôn mặc định vai trò `MEMBER`).
 - [x] **UC1.2:** Đăng nhập / Đăng xuất an toàn bằng JWT, chặn tài khoản `LOCKED` (403).
 - [x] **UC1.3:** Xem và cập nhật hồ sơ cá nhân (chặn tự sửa Role hoặc Trạng thái).
@@ -162,28 +162,28 @@ Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tà
 - [x] **UC1.5:** Admin quản lý người dùng, tạo tài khoản HLV (`TRAINER`), khóa/mở khóa tài khoản (chống Admin tự khóa chính mình).
 - [x] **UC1.6:** Admin tra cứu, tìm kiếm và cập nhật chuyên môn, tiểu sử HLV & Hội viên.
 
-### Nhóm UC2: Quản lý Lớp, Phòng & Lịch tập (5 Use Cases - 100%)
+### Nhóm UC2: Quản lý Lớp, Phòng & Lịch tập
 - [x] **UC2.1:** Quản lý danh mục mẫu lớp Pilates (Classic, Dynamic Core, Flow, Tower...).
 - [x] **UC2.2:** Quản lý danh sách phòng tập (Reformer, Mat) và sức chứa tối đa.
 - [x] **UC2.3:** Admin xếp lịch buổi tập mới, kiểm tra chống trùng phòng và chống trùng lịch HLV.
 - [x] **UC2.4:** Xem thời khóa biểu dạng lưới 7 ngày/tuần trực quan, có bộ lọc theo HLV, lớp và trạng thái.
 - [x] **UC2.5:** Admin hủy buổi tập chưa diễn ra: Tự động hoàn lại 1 lượt tập cho tất cả học viên đã đặt chỗ về đúng gói tập đã trừ.
 
-### Nhóm UC3: Quản lý Gói tập & Thanh toán (5 Use Cases - 100%)
+### Nhóm UC3: Quản lý Gói tập & Thanh toán
 - [x] **UC3.1:** Quản lý danh mục các gói tập Pilates (Gói 10 buổi, 20 buổi, 36 buổi, VIP 60 buổi).
 - [x] **UC3.2:** Hội viên chọn mua gói tập, tạo giao dịch thanh toán chờ duyệt (`UNPAID`).
 - [x] **UC3.3:** Admin xác nhận thanh toán (`PAID`): Tự động kích hoạt gói mới hoặc gia hạn cộng dồn số buổi và cộng thêm ngày sử dụng nguyên tử trong 1 Transaction.
 - [x] **UC3.4:** Cảnh báo hội viên khi gói tập sắp hết hạn ($\le 7$ ngày) hoặc sắp hết buổi ($\le 2$ lượt).
 - [x] **UC3.5:** Theo dõi chi tiết lịch sử giao dịch và hóa đơn thanh toán của hội viên.
 
-### Nhóm UC4: Đặt chỗ & Hủy lịch tập (5 Use Cases - 100%)
+### Nhóm UC4: Đặt chỗ & Hủy lịch tập
 - [x] **UC4.1:** Xem danh sách buổi tập đang mở (chỉ hiển thị buổi chưa bắt đầu, cho phép đăng ký).
 - [x] **UC4.2:** Hội viên đặt chỗ buổi tập: Áp dụng **Khóa bi quan (Pessimistic Locking)** chống Race Condition khi nhiều người cùng đặt chỗ cuối, trừ 1 lượt nguyên tử.
 - [x] **UC4.3:** Xem danh sách các buổi tập đã đặt chỗ của cá nhân Hội viên.
 - [x] **UC4.4:** Hội viên hủy đặt chỗ: Áp dụng **Biên thời gian 2 giờ** (Hủy trước $\ge 2$ tiếng được hoàn trả 1 lượt về đúng gói; hủy trong vòng 2 tiếng sát giờ không hoàn lượt).
 - [x] **UC4.5:** Xem thông báo xác nhận và cảnh báo trạng thái đặt/hủy chỗ trên giao diện người dùng.
 
-### Nhóm UC5: Điểm danh & Báo cáo Thống kê (4 Use Cases - 100%)
+### Nhóm UC5: Điểm danh & Báo cáo Thống kê
 - [x] **UC5.1:** Xem danh sách học viên đã đặt chỗ của từng buổi tập (dành cho HLV phụ trách & Admin).
 - [x] **UC5.2:** HLV / Admin điểm danh học viên tại buổi tập (Có mặt / Vắng mặt). Học viên vắng mặt không được hoàn lại buổi tập.
 - [x] **UC5.3:** Học viên theo dõi lịch sử tập luyện và kết quả điểm danh cá nhân (`ATTENDED` / `ABSENT`).
