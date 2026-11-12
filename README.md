@@ -44,13 +44,13 @@ quan-ly-pilates/
 │   ├── .env.example               # Biến môi trường mẫu Frontend
 │   └── package.json               # Node dependencies
 ├── docs/                          # Tài liệu SAD, đặc tả ca sử dụng, báo cáo Tuần 12
-│   ├── N06_12_SAD_Pilates_Tuan12_theo_cau_truc_mau.docx # File Word báo cáo Tuần 12 chính thức
+│   ├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx # File Word báo cáo Tuần 12 chính thức
 │   ├── PROJECT_STRUCTURE.md       # Cấu trúc chi tiết Monorepo
 │   ├── IMPLEMENTATION_PLAN.md     # Kế hoạch và đặc tả 25 Use Case
 │   ├── ACCOUNTS.md                # Danh sách tài khoản kiểm thử
 │   └── AGENTS.md                  # Quy tắc nghiệp vụ và ràng buộc hệ thống
 ├── export_for_report/             # Gói xuất nộp báo cáo hoàn chỉnh (code sạch + log test)
-├── export_for_report.zip         # Gói nén nộp Canvas trọn gói
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Gói nén nộp Canvas trọn gói (hoặc export_for_report.zip)
 ├── run-all.bat                    # Script khởi chạy 1-Click cả Backend và Frontend
 ├── run-backend.bat                # Script chạy riêng Backend (Port 8080)
 ├── run-frontend.bat               # Script chạy riêng Frontend (Port 5173)

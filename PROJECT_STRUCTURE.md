@@ -69,7 +69,8 @@ quan-ly-pilates/
 │   ├── mvn_test_result.txt                # Nhật ký kết quả chạy 73/73 tests PASS
 │   ├── ACCOUNTS.md, IMPLEMENTATION_PLAN.md, PROJECT_STRUCTURE.md, README.md, AGENTS.md
 │   └── run-all.bat, run-backend.bat, run-frontend.bat
-├── export_for_report.zip                 # Gói zip master tổng thể nộp Canvas (~24 MB)
+├── export_for_report.zip                 # Gói zip master tổng thể nộp bài (~10.8 MB)
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Tên gói zip chính thức nộp Canvas theo mã nhóm N06-12
 ├── run-all.bat                            # Script 1-Click khởi động cả Backend và Frontend
 ├── run-backend.bat                        # Script khởi động Backend độc lập
 ├── run-frontend.bat                       # Script khởi động Frontend độc lập
