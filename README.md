@@ -7,23 +7,23 @@ Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng ki�
 
 ---
 
-## 📑 Mục lục (Table of Contents)
+## Mục lục (Table of Contents)
 
-- [✨ Giới thiệu dự án](#-giới-thiệu-dự-án)
-- [👥 Thành viên nhóm & Giảng viên hướng dẫn](#-thành-viên-nhóm--giảng-viên-hướng-dẫn)
-- [💡 Điểm nổi bật & Công nghệ sử dụng](#-điểm-nổi-bật--công-nghệ-sử-dụng)
-- [📁 Cấu trúc thư mục Monorepo](#-cấu-trúc-thư-mục-monorepo)
-- [⚙️ Hướng dẫn Khởi chạy Hệ thống](#️-hướng-dẫn-khởi-chạy-hệ-thống)
-- [🔑 Tài khoản Kiểm thử Đăng nhập](#-tài-khoản-kiểm-thử-đăng-nhập)
-- [🚀 Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)](#-tiến-độ-triển-khai-5-nhóm-use-cases-hoàn-thành-100)
-- [✅ Kiểm thử Tự động (Automated Testing)](#-kiểm-thử-tự-động-automated-testing)
-- [🗄️ Quy tắc Di trú Database (Flyway Migration Policy & History)](#️-quy-tắc-di-trú-database-flyway-migration-policy--history)
-- [🛡️ Lưu ý Bảo mật khi Đưa lên GitHub](#️-lưu-ý-bảo-mật-khi-đưa-lên-github)
-- [📚 Tài liệu Tham khảo](#-tài-liệu-tham-khảo)
+- [1. Giới thiệu dự án](#1-giới-thiệu-dự-án)
+- [2. Thành viên nhóm & Giảng viên hướng dẫn](#2-thành-viên-nhóm--giảng-viên-hướng-dẫn)
+- [3. Điểm nổi bật & Công nghệ sử dụng](#3-điểm-nổi-bật--công-nghệ-sử-dụng)
+- [4. Cấu trúc thư mục Monorepo](#4-cấu-trúc-thư-mục-monorepo)
+- [5. Hướng dẫn Khởi chạy Hệ thống](#5-hướng-dẫn-khởi-chạy-hệ-thống)
+- [6. Tài khoản Kiểm thử Đăng nhập](#6-tài-khoản-kiểm-thử-đăng-nhập)
+- [7. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)](#7-tiến-độ-triển-khai-5-nhóm-use-cases-hoàn-thành-100)
+- [8. Kiểm thử Tự động (Automated Testing)](#8-kiểm-thử-tự-động-automated-testing)
+- [9. Quy tắc Di trú Database (Flyway Migration Policy & History)](#9-quy-tắc-di-trú-database-flyway-migration-policy--history)
+- [10. Lưu ý Bảo mật khi Đưa lên GitHub](#10-lưu-ý-bảo-mật-khi-đưa-lên-github)
+- [11. Tài liệu Tham khảo](#11-tài-liệu-tham-khảo)
 
 ---
 
-## ✨ Giới thiệu dự án
+## 1. Giới thiệu dự án
 
 Hệ thống **Glow Pilates** cung cấp giải pháp chuyển đổi số toàn diện cho chuỗi phòng tập Pilates cao cấp, giải quyết triệt để các bài toán nghiệp vụ phức tạp:
 - **Quản lý lịch tập & Chống xung đột:** Xếp lịch buổi tập chống trùng phòng tập và huấn luyện viên, kiểm soát sức chứa phòng tập nghiêm ngặt.
@@ -33,7 +33,7 @@ Hệ thống **Glow Pilates** cung cấp giải pháp chuyển đổi số toàn
 
 ---
 
-## 👥 Thành viên nhóm & Giảng viên hướng dẫn
+## 2. Thành viên nhóm & Giảng viên hướng dẫn
 
 | STT | Họ và tên | Mã sinh viên | Vai trò trong dự án | GitHub |
 | :---: | :--- | :---: | :--- | :---: |
@@ -46,7 +46,7 @@ Hệ thống **Glow Pilates** cung cấp giải pháp chuyển đổi số toàn
 
 ---
 
-## 💡 Điểm nổi bật & Công nghệ sử dụng
+## 3. Điểm nổi bật & Công nghệ sử dụng
 
 ### 1. Backend (REST API):
 - **Ngôn ngữ & Framework:** Java 17 LTS, Spring Boot 3.3.4.
@@ -65,7 +65,7 @@ Hệ thống **Glow Pilates** cung cấp giải pháp chuyển đổi số toàn
 
 ---
 
-## 📁 Cấu trúc thư mục Monorepo
+## 4. Cấu trúc thư mục Monorepo
 
 ```text
 quan-ly-pilates/
@@ -99,7 +99,7 @@ quan-ly-pilates/
 
 ---
 
-## ⚙️ Hướng dẫn Khởi chạy Hệ thống
+## 5. Hướng dẫn Khởi chạy Hệ thống
 
 ### Cách 1: Khởi chạy 1-Click (Khuyên dùng trên Windows)
 Chỉ cần nhấp đúp chuột vào file:
@@ -137,7 +137,7 @@ npm run dev
 
 ---
 
-## 🔑 Tài khoản Kiểm thử Đăng nhập
+## 6. Tài khoản Kiểm thử Đăng nhập
 
 Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò với mật khẩu mặc định: `Password123!`
 
@@ -151,7 +151,7 @@ Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò vớ
 
 ---
 
-## 🚀 Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)
+## 7. Tiến độ Triển khai 5 Nhóm Use Cases (Hoàn thành 100%)
 
 Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tài liệu Đặc tả Phân tích Thiết kế (SAD):
 
@@ -192,7 +192,7 @@ Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tà
 
 ---
 
-## ✅ Kiểm thử Tự động (Automated Testing)
+## 8. Kiểm thử Tự động (Automated Testing)
 
 Toàn bộ nghiệp vụ quan trọng (bảo vệ phân quyền, khóa bi quan, biên 2 giờ hoàn lượt, kích hoạt gói nguyên tử, chặn điểm danh buổi hủy UC5.2, bảo mật production chặn mock login, bảo toàn dữ liệu Flyway V1..V9) đều có bài kiểm thử tự động:
 
@@ -224,7 +224,7 @@ mvn clean verify
 
 ---
 
-## 🗄️ Quy tắc Di trú Database (Flyway Migration Policy & History)
+## 9. Quy tắc Di trú Database (Flyway Migration Policy & History)
 
 Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn quản trị cơ sở dữ liệu:
 1. **Chính sách Forward-Only (V1 đến V9):** Tuyệt đối không xóa dữ liệu (`DELETE FROM bookings/sessions`, `TRUNCATE` hay `DROP TABLE`).
@@ -239,7 +239,7 @@ Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn quản trị cơ sở
 
 ---
 
-## 🛡️ Lưu ý Bảo mật khi Đưa lên GitHub
+## 10. Lưu ý Bảo mật khi Đưa lên GitHub
 
 Dự án đã được cấu hình sẵn file [`.gitignore`](file:///d:/quan-ly-pilates/.gitignore) ở thư mục gốc:
 1. **Tuyệt đối không commit file `.env`**: File `backend/.env` và `frontend/.env` chứa mật khẩu kết nối database Supabase và JWT Secret đã được tự động loại trừ 100%. Luôn dùng `.env.example` làm mẫu cấu hình.
@@ -248,7 +248,7 @@ Dự án đã được cấu hình sẵn file [`.gitignore`](file:///d:/quan-ly-
 
 ---
 
-## 📚 Tài liệu Tham khảo
+## 11. Tài liệu Tham khảo
 
 - [1] **Báo cáo SAD Hoàn chỉnh Tuần 12:** [`docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx`](file:///d:/quan-ly-pilates/docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx)
 - [2] **Đặc tả 25 Use Cases & Kế hoạch Kỹ thuật:** [`docs/IMPLEMENTATION_PLAN.md`](file:///d:/quan-ly-pilates/docs/IMPLEMENTATION_PLAN.md)
