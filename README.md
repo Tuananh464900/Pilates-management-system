@@ -49,8 +49,8 @@ quan-ly-pilates/
 │   ├── IMPLEMENTATION_PLAN.md     # Kế hoạch và đặc tả 25 Use Case
 │   ├── ACCOUNTS.md                # Danh sách tài khoản kiểm thử
 │   └── AGENTS.md                  # Quy tắc nghiệp vụ và ràng buộc hệ thống
-├── export_for_report/             # Gói xuất nộp báo cáo hoàn chỉnh (code sạch + log test)
-├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Gói nén nộp Canvas trọn gói (hoặc export_for_report.zip)
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/  # Thư mục chuẩn bị xuất nộp bài theo mã nhóm N06-12
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Gói zip master nộp Canvas theo mã nhóm N06-12 (~10.8 MB)
 ├── run-all.bat                    # Script khởi chạy 1-Click cả Backend và Frontend
 ├── run-backend.bat                # Script chạy riêng Backend (Port 8080)
 ├── run-frontend.bat               # Script chạy riêng Frontend (Port 5173)

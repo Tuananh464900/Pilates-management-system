@@ -62,15 +62,14 @@ quan-ly-pilates/
 │                                          # PackageManagePage, ClassManagePage, RoomManagePage, UserManagePage,
 │                                          # AdminProfileManagePage
 │
-├── export_for_report/                     # Thư mục chuẩn bị xuất nộp báo cáo
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/  # Thư mục chuẩn bị xuất nộp bài theo mã nhóm N06-12
 │   ├── backend.zip                        # Mã nguồn backend nén
 │   ├── frontend.zip                       # Mã nguồn frontend nén
 │   ├── docs.zip                           # Báo cáo Word SAD và tài liệu markdown nén
 │   ├── mvn_test_result.txt                # Nhật ký kết quả chạy 73/73 tests PASS
 │   ├── ACCOUNTS.md, IMPLEMENTATION_PLAN.md, PROJECT_STRUCTURE.md, README.md, AGENTS.md
 │   └── run-all.bat, run-backend.bat, run-frontend.bat
-├── export_for_report.zip                 # Gói zip master tổng thể nộp bài (~10.8 MB)
-├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Tên gói zip chính thức nộp Canvas theo mã nhóm N06-12
+├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.zip # Gói zip master nộp Canvas theo mã nhóm N06-12 (~10.8 MB)
 ├── run-all.bat                            # Script 1-Click khởi động cả Backend và Frontend
 ├── run-backend.bat                        # Script khởi động Backend độc lập
 ├── run-frontend.bat                       # Script khởi động Frontend độc lập
