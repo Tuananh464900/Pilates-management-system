@@ -1,6 +1,6 @@
-# Ứng dụng: Quản lý Phòng tập Pilates (Glow Pilates - N06-12)
+# Phần mềm: Quản lý Phòng tập Pilates (Glow Pilates - N06-12)
 
-Dự án bài tập lớn môn **Phân tích và Thiết kế Phần mềm (SAD)** – Đại học Phenikaa (Báo cáo Tuần 12 hoàn thiện).  
+Dự án bài tập lớn môn **Phân tích và Thiết kế Phần mềm (SAD)**  
 Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng kiến trúc phân tầng chuẩn Enterprise Monorepo, tối ưu trải nghiệm người dùng với phong cách thiết kế Soft-Luxury Aesthetic.
 
 ---
