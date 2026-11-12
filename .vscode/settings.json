@@ -1,0 +1,16 @@
+{
+  "files.encoding": "utf8",
+  "java.import.maven.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.jdt.ls.lombokSupport.enabled": true,
+  "java.compile.nullAnalysis.mode": "disabled",
+  "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
+      "default": true
+    }
+  ],
+  "maven.terminal.useJavaHome": true
+}
