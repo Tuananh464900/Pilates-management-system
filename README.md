@@ -238,9 +238,8 @@ Hệ thống tuân thủ nghiêm ngặt các tiêu chuẩn quản trị cơ sở
 
 ## 10. Tài liệu Tham khảo
 
-- [1] **Báo cáo dự án:** [`N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx`](file:///d:/quan-ly-pilates/docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx)
-- [2] **Tài liệu Tham khảo Công nghệ:** Spring Boot 3.3 Reference, React Quick Start, PostgreSQL 16 Docs.
-- [3] **Mẫu Báo cáo Môn học:** `SAD_ReportTemplate_1_2026`
-- [4] **Tài liệu Hướng dẫn Bài tập Thực hành:** `IBM_ex_workbook_new`
-- [5] **Giáo trình Phân tích Thiết kế Hệ thống (SAD):** `Alan Dennis, Barbara Wixom, David Tegarden - Systems Analysis and Design_ An Object-Oriented Approach with UML-Wiley (2020).pdf`
-- [6] **Sách Tham khảo Mẫu Thiết kế (Design Patterns):** `[O'Reilly. Head First] - Head First Design Patterns 2nd Edition - [Freeman].pdf`
+- [1] **Tài liệu Tham khảo Công nghệ:** Spring Boot 3.3 Reference, React Quick Start, PostgreSQL 16 Docs.
+- [2] **Mẫu Báo cáo Môn học:** `SAD_ReportTemplate_1_2026`
+- [3] **Tài liệu Hướng dẫn Bài tập Thực hành:** `IBM_ex_workbook_new`
+- [4] **Giáo trình Phân tích Thiết kế Hệ thống (SAD):** `Alan Dennis, Barbara Wixom, David Tegarden - Systems Analysis and Design_ An Object-Oriented Approach with UML-Wiley (2020).pdf`
+- [5] **Sách Tham khảo Mẫu Thiết kế (Design Patterns):** `[O'Reilly. Head First] - Head First Design Patterns 2nd Edition - [Freeman].pdf`
