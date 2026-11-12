@@ -13,7 +13,7 @@ Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng ki�
 - **Cơ sở dữ liệu & ORM:** PostgreSQL (Supabase Session Pooler), Spring Data JPA, Hibernate.
 - **Quản lý phiên bản DB:** Flyway Migration (V1 đến V9 chuẩn Forward-Only, bảo toàn dữ liệu, chống xung đột lịch trùng).
 - **Tài liệu API:** Springdoc OpenAPI 3.0 / Swagger UI (56 endpoints).
-- **Kiểm thử tự động:** JUnit 5, Mockito, AssertJ (Đạt **68/68** test case Unit & Integration Test qua 11 Test Classes, 100% Passed).
+- **Kiểm thử tự động:** JUnit 5, Mockito, AssertJ (Đạt **73/73** test case Unit & Integration Test qua 11 Test Classes, 100% Passed).
 
 ### Frontend (Single Page Application):
 - **Core:** React 18, TypeScript, Vite 5.
@@ -30,8 +30,8 @@ Hệ thống quản lý phòng tập Pilates chuyên nghiệp, ứng dụng ki�
 quan-ly-pilates/
 ├── backend/                       # Source code Spring Boot REST API
 │   ├── src/main/java/             # Controller, Service, Repository, Entity, DTO, Security
-│   ├── src/main/resources/        # application.yml, db/migration (Flyway V1 -> V8)
-│   ├── src/test/java/             # 55 Unit & Integration Tests (100% Passed)
+│   ├── src/main/resources/        # application.yml, db/migration (Flyway V1 -> V9)
+│   ├── src/test/java/             # 73 Unit & Integration Tests (11 test classes, 100% Passed)
 │   ├── .env.example               # Biến môi trường mẫu (Bảo mật: không commit .env)
 │   └── pom.xml                    # Maven dependencies
 ├── frontend/                      # Source code React Vite TypeScript
@@ -166,16 +166,16 @@ mvn clean verify
 - **Frontend Build:** `npm run build` -> `dist/` 100% PASS (Vite v5.4.21, 0 errors)
 
 ### Các bài kiểm thử nghiệp vụ và an toàn tương tranh (Concurrency & Security):
-1. `AttendanceAndStatsTest` (12 tests): Điểm danh có mặt/vắng mặt, thống kê doanh thu tháng/năm, KPI giảng dạy HLV, chặn điểm danh buổi đã hủy.
-2. `AuthControllerTest` (10 tests): Đăng ký Member, đổi mật khẩu, ẩn email/SĐT HLV ở API public (`/api/v1/auth/trainers`).
+1. `AttendanceAndStatsTest` (7 tests): Điểm danh có mặt/vắng mặt, thống kê doanh thu tháng/năm, KPI giảng dạy HLV, chặn điểm danh buổi đã hủy.
+2. `AuthControllerTest` (13 tests): Đăng ký Member, đổi mật khẩu, ẩn email/SĐT HLV ở API public (`/api/v1/auth/trainers`), xác thực JWT.
 3. `BookingFlowTest` (9 tests): Đặt chỗ, biên 2h hoàn lượt, xem danh sách buổi tập và học viên.
 4. `ConcurrencySafetyTest` (10 tests): Đặt chỗ trùng giờ đồng thời, hủy booking đồng thời, đặt buổi và hủy buổi đồng thời (Lost update phòng ngừa), Admin hủy buổi và Member hủy booking đồng thời (Deadlock prevention), chặn chuyển gói khác loại khi có booking dở dang, chặn tạo buổi tập vượt sức chứa phòng.
-5. `DefaultProfileSecurityTest` (2 tests): Mặc định bảo vệ không mở port nhạy cảm.
-6. `FlywayMigrationTest` (1 test): Kiểm tra tính hợp lệ và toàn vẹn của chuỗi di trú V1-V9.
-7. `MembershipPaymentTest` (7 tests): Mua gói, xác nhận thanh toán nguyên tử, gia hạn gói EXHAUSTED cùng loại không tạo gói mới (chống 2 gói ACTIVE).
-8. `MultiProfileSecurityTest` (3 tests): Ưu tiên production tuyệt đối khi cấu hình đa profile.
+5. `DefaultProfileSecurityTest` (1 test): Mặc định bảo vệ không mở port nhạy cảm.
+6. `FlywayMigrationTest` (6 tests): Kiểm tra tính hợp lệ và toàn vẹn của chuỗi di trú V1-V9.
+7. `MembershipPaymentTest` (8 tests): Mua gói, xác nhận thanh toán nguyên tử, gia hạn gói EXHAUSTED cùng loại không tạo gói mới (chống 2 gói ACTIVE).
+8. `MultiProfileSecurityTest` (1 test): Ưu tiên production tuyệt đối khi cấu hình đa profile.
 9. `ProductionSecurityTest` (5 tests): Bắt buộc JWT xác minh tài khoản Member trên production, vô hiệu hóa mock login 100% trên production, kiểm tra độ dài JWT secret.
-10. `SessionSchedulingTest` (7 tests): Xếp lịch buổi tập, kiểm tra sức chứa phòng, kiểm tra xung đột phòng và HLV.
+10. `SessionSchedulingTest` (6 tests): Xếp lịch buổi tập, kiểm tra sức chứa phòng, kiểm tra xung đột phòng và HLV.
 11. `UserSecurityTest` (7 tests): Phân quyền RBAC, tài khoản bị khóa (`LOCKED`), cập nhật hồ sơ cá nhân.
 
 ---
