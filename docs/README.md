@@ -79,6 +79,7 @@ quan-ly-pilates/
 │   └── package.json                       # Node dependencies
 ├── docs/                                  # Tài liệu SAD, đặc tả ca sử dụng, báo cáo Tuần 12
 │   ├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx # Báo cáo Word SAD hoàn chỉnh Tuần 12
+│   ├── PROJECT_STRUCTURE.md               # Sơ đồ cấu trúc chi tiết Monorepo
 │   ├── IMPLEMENTATION_PLAN.md             # Đặc tả 25 Use Case & Kế hoạch triển khai
 │   └── ACCOUNTS.md                        # Danh sách tài khoản kiểm thử chính thức
 ├── N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/  # Thư mục chuẩn bị xuất nộp bài theo mã nhóm N06-12
@@ -87,6 +88,7 @@ quan-ly-pilates/
 ├── run-backend.bat                        # Script khởi động Backend độc lập
 ├── run-frontend.bat                       # Script khởi động Frontend độc lập
 ├── ACCOUNTS.md                            # Danh sách chi tiết tài khoản kiểm thử
+├── PROJECT_STRUCTURE.md                   # Sơ đồ cấu trúc chi tiết Monorepo
 ├── README.md                              # Hướng dẫn chi tiết dự án & Báo cáo tiến độ
 └── .gitignore                             # Cấu hình loại trừ file nhạy cảm và build artifact
 ```
