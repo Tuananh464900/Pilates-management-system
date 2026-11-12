@@ -33,7 +33,7 @@ public class Booking {
 
     /**
      * Lưu chính xác gói tập đã bị trừ lượt để khi hủy buổi hoặc hủy đăng ký hợp lệ,
-     * hoàn trả 1 lượt về ĐÚNG gói này (theo yêu cầu AGENTS.md)
+     * hoàn trả 1 lượt về ĐÚNG gói này (theo yêu cầu đặc tả nghiệp vụ SAD)
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "membership_id", nullable = false)

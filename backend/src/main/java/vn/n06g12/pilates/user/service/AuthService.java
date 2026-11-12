@@ -140,7 +140,7 @@ public class AuthService {
         }
 
         try {
-            // ÉP BUỘC vai trò MEMBER theo đúng quy tắc AGENTS.md
+            // ÉP BUỘC vai trò MEMBER theo đúng quy tắc đặc tả SAD
             User user = User.builder()
                     .id(userId)
                     .email(email)

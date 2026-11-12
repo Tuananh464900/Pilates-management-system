@@ -20,7 +20,7 @@ public class AdminDashboardResponse {
     private BigDecimal monthlyBankTransferRevenue;
     private BigDecimal monthlyCashRevenue;
 
-    // Doanh thu toàn kỳ (Chỉ tính PAID theo quy định AGENTS.md)
+    // Doanh thu toàn kỳ (Chỉ tính PAID theo quy định đặc tả SAD)
     private BigDecimal totalPaidRevenue;
     private BigDecimal bankTransferRevenue;
     private BigDecimal cashRevenue;

@@ -2,7 +2,7 @@
 
 > **Dự án:** Phần mềm Quản lý phòng tập Pilates  
 > **Nhóm thực hiện:** N06-12 (Môn: Phân tích và Thiết kế phần mềm - Đại học Phenikaa)  
-> **Nguồn tài liệu đặc tả:** `docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx`, `AGENTS.md`, `ACCOUNTS.md`.  
+> **Nguồn tài liệu đặc tả:** `docs/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates.docx`, `docs/ACCOUNTS.md`.  
 > **Trạng thái:** ĐÃ HOÀN THÀNH TRIỂN KHAI 100% (Đạt 55/55 Unit & Integration Tests, kiểm thử toàn diện trên trình duyệt).
 
 ---
@@ -95,7 +95,6 @@ Dự án được cấu trúc theo dạng Monorepo chuẩn sinh viên: rõ ràng
 
 ```text
 quan-ly-pilates/
-├── AGENTS.md                          # Bộ quy tắc cố định của dự án
 ├── ACCOUNTS.md                        # Danh sách chi tiết tài khoản kiểm thử
 ├── README.md                          # Tài liệu hướng dẫn cài đặt và khởi chạy hệ thống
 ├── run-all.bat                        # Script 1-Click khởi động cả Backend và Frontend
@@ -849,7 +848,7 @@ Hệ thống áp dụng chiến lược kiểm thử tự động toàn diện v
 
 ## 11. CÁC ĐIỂM CẦN XÁC NHẬN VỚI NGƯỜI DÙNG (CẦN XÁC NHẬN)
 
-Theo đúng quy tắc của `AGENTS.md` và `REQUIREMENTS_TRACE.md`, dưới đây là các điểm nghiệp vụ chưa thể suy ra 100% từ báo cáo và phương án đề xuất để người dùng quyết định:
+Theo đúng quy tắc của tài liệu đặc tả nghiệp vụ SAD, dưới đây là các điểm nghiệp vụ chưa thể suy ra 100% từ báo cáo và phương án đề xuất để người dùng quyết định:
 
 1. **Vấn đề 1: Đặt lại buổi tập sau khi học viên đã hủy**
    - *Câu hỏi*: Sau khi học viên đã hủy booking một buổi tập (ví dụ hủy trước 2 giờ được hoàn lượt), học viên đó có được phép đặt lại chính buổi tập đó không nếu buổi tập vẫn còn chỗ?
