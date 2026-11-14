@@ -147,7 +147,7 @@ Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò vớ
 | **TRAINER** (Huấn luyện viên) | `trainer@pilates.com` | `Password123!` | Xem lịch dạy cá nhân, điểm danh học viên (Có mặt / Vắng mặt), theo dõi KPI và thống kê giảng dạy. |
 | **MEMBER** (Học viên) | `nguyen12@gmail.com` | `MatKhauMoi123!` *(gốc: `Password123!`)* | Xem thời khóa biểu, đặt chỗ buổi tập, hủy buổi hoàn lượt (trước 2h), mua gói tập, xem lịch sử giao dịch. |
 
-*(Xem thêm hướng dẫn chi tiết từng luồng tại [ACCOUNTS.md](file:///d:/quan-ly-pilates/ACCOUNTS.md))*
+*(Chi tiết quyền hạn và danh sách tài khoản kiểm thử đầy đủ được lưu trữ trong file ACCOUNTS.md cục bộ của gói nộp bài)*
 
 ---
 
