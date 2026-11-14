@@ -42,6 +42,10 @@ export interface MemberMembership {
   packageName: string;
   totalSessions: number;
   remainingSessions: number;
+  packageCount?: number;
+  renewalCount?: number;
+  totalAccumulatedSessions?: number;
+  usedSessions?: number;
   startDate: string;
   endDate: string;
   daysRemaining: number;

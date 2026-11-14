@@ -14,6 +14,7 @@ import vn.n06g12.pilates.membership.entity.MembershipPackage;
 import vn.n06g12.pilates.membership.entity.MembershipStatus;
 import vn.n06g12.pilates.membership.entity.Payment;
 import vn.n06g12.pilates.membership.repository.MemberMembershipRepository;
+import vn.n06g12.pilates.membership.repository.PaymentRepository;
 import vn.n06g12.pilates.user.entity.User;
 import vn.n06g12.pilates.user.repository.UserRepository;
 
@@ -31,6 +32,7 @@ public class MembershipService {
     private final MemberMembershipRepository membershipRepository;
     private final UserRepository userRepository;
     private final BookingRepository bookingRepository;
+    private final PaymentRepository paymentRepository;
 
     @Transactional
     public Optional<MemberMembershipResponse> getActiveMembership(UUID memberId) {
@@ -38,7 +40,9 @@ public class MembershipService {
         Optional<MemberMembership> activeOpt = membershipRepository.findActiveMembership(memberId, MembershipStatus.ACTIVE, now);
 
         if (activeOpt.isPresent()) {
-            return Optional.of(MemberMembershipResponse.from(activeOpt.get()));
+            MemberMembership m = activeOpt.get();
+            int paymentCount = (int) paymentRepository.countPaidPaymentsByMembership(m.getId());
+            return Optional.of(MemberMembershipResponse.from(m, paymentCount));
         }
 
         // Tự động quét và cập nhật trạng thái các gói đã hết hạn hoặc hết lượt tập
@@ -60,7 +64,10 @@ public class MembershipService {
     @Transactional(readOnly = true)
     public Page<MemberMembershipResponse> getMembershipHistory(UUID memberId, Pageable pageable) {
         return membershipRepository.findByMemberIdOrderByCreatedAtDesc(memberId, pageable)
-                .map(MemberMembershipResponse::from);
+                .map(m -> {
+                    int paymentCount = (int) paymentRepository.countPaidPaymentsByMembership(m.getId());
+                    return MemberMembershipResponse.from(m, paymentCount);
+                });
     }
 
     /**

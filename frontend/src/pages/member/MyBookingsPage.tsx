@@ -20,7 +20,8 @@ export const MyBookingsPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [errorMsg, setErrorMsg] = useState<string>('');
   const [successMsg, setSuccessMsg] = useState<string>('');
-  const [filterStatus, setFilterStatus] = useState<string>('CONFIRMED');
+  type FilterTab = 'UPCOMING' | 'ATTENDED' | 'CANCELED' | 'ALL';
+  const [filterTab, setFilterTab] = useState<FilterTab>('UPCOMING');
 
   // Modal hủy booking
   const [cancelingBooking, setCancelingBooking] = useState<Booking | null>(null);
@@ -45,6 +46,25 @@ export const MyBookingsPage: React.FC = () => {
   useEffect(() => {
     fetchMyBookings();
   }, []);
+
+  const isPastBooking = (b: Booking) => {
+    if (!b.endTime) return false;
+    return new Date(b.endTime).getTime() <= Date.now();
+  };
+
+  const isAttendedBooking = (b: Booking) => {
+    if (b.status === 'CANCELED' || b.status === 'ABSENT') return false;
+    return b.status === 'ATTENDED' || isPastBooking(b);
+  };
+
+  const isUpcomingBooking = (b: Booking) => {
+    return b.status === 'CONFIRMED' && !isPastBooking(b);
+  };
+
+  const upcomingCount = bookings.filter(isUpcomingBooking).length;
+  const attendedCount = bookings.filter(isAttendedBooking).length;
+  const canceledCount = bookings.filter((b) => b.status === 'CANCELED').length;
+  const totalCount = bookings.length;
 
   const handleConfirmCancel = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,8 +91,10 @@ export const MyBookingsPage: React.FC = () => {
   };
 
   const filteredBookings = bookings.filter((b) => {
-    if (!filterStatus) return true;
-    return b.status === filterStatus;
+    if (filterTab === 'UPCOMING') return isUpcomingBooking(b);
+    if (filterTab === 'ATTENDED') return isAttendedBooking(b);
+    if (filterTab === 'CANCELED') return b.status === 'CANCELED';
+    return true;
   });
 
   return (
@@ -111,28 +133,28 @@ export const MyBookingsPage: React.FC = () => {
       <div className="card" style={{ marginBottom: '1.5rem', padding: '1rem' }}>
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           <button
-            onClick={() => setFilterStatus('CONFIRMED')}
-            className={`btn btn-sm ${filterStatus === 'CONFIRMED' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setFilterTab('UPCOMING')}
+            className={`btn btn-sm ${filterTab === 'UPCOMING' ? 'btn-primary' : 'btn-secondary'}`}
           >
-            Sắp diễn ra
+            Sắp diễn ra ({upcomingCount})
           </button>
           <button
-            onClick={() => setFilterStatus('ATTENDED')}
-            className={`btn btn-sm ${filterStatus === 'ATTENDED' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setFilterTab('ATTENDED')}
+            className={`btn btn-sm ${filterTab === 'ATTENDED' ? 'btn-primary' : 'btn-secondary'}`}
           >
-            Đã tham gia
+            Đã tham gia ({attendedCount})
           </button>
           <button
-            onClick={() => setFilterStatus('CANCELED')}
-            className={`btn btn-sm ${filterStatus === 'CANCELED' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setFilterTab('CANCELED')}
+            className={`btn btn-sm ${filterTab === 'CANCELED' ? 'btn-primary' : 'btn-secondary'}`}
           >
-            Đã hủy
+            Đã hủy ({canceledCount})
           </button>
           <button
-            onClick={() => setFilterStatus('')}
-            className={`btn btn-sm ${filterStatus === '' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setFilterTab('ALL')}
+            className={`btn btn-sm ${filterTab === 'ALL' ? 'btn-primary' : 'btn-secondary'}`}
           >
-            Tất cả
+            Tất cả ({totalCount})
           </button>
         </div>
       </div>
@@ -181,15 +203,20 @@ export const MyBookingsPage: React.FC = () => {
               </thead>
               <tbody>
                 {filteredBookings.map((b) => {
-                  let statusBadge = <span className="badge badge-success">Sắp diễn ra</span>;
-                  if (b.status === 'ATTENDED') statusBadge = <span className="badge badge-primary">Đã tham gia</span>;
-                  if (b.status === 'ABSENT') statusBadge = <span className="badge badge-warning">Vắng mặt</span>;
+                  const isPast = isPastBooking(b);
+                  let statusBadge: React.ReactNode;
                   if (b.status === 'CANCELED') {
                     statusBadge = (
                       <span className="badge badge-danger">
                         Đã hủy {b.refunded ? '(Đã hoàn 1 lượt)' : '(Không hoàn lượt)'}
                       </span>
                     );
+                  } else if (b.status === 'ABSENT') {
+                    statusBadge = <span className="badge badge-warning">Vắng mặt</span>;
+                  } else if (isAttendedBooking(b)) {
+                    statusBadge = <span className="badge badge-primary">Đã tham gia</span>;
+                  } else {
+                    statusBadge = <span className="badge badge-success">Sắp diễn ra</span>;
                   }
 
                   return (
@@ -223,7 +250,7 @@ export const MyBookingsPage: React.FC = () => {
                       </td>
                       <td>{statusBadge}</td>
                       <td style={{ textAlign: 'right' }}>
-                        {b.canCancel && (
+                        {b.canCancel && !isPast && (
                           <button
                             onClick={() => {
                               setCancelingBooking(b);

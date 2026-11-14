@@ -25,6 +25,10 @@ public class MemberMembershipResponse {
     private String packageName;
     private Integer totalSessions;
     private Integer remainingSessions;
+    private Integer packageCount;
+    private Integer renewalCount;
+    private Integer totalAccumulatedSessions;
+    private Integer usedSessions;
     private Instant startDate;
     private Instant endDate;
     private Long daysRemaining;
@@ -34,6 +38,10 @@ public class MemberMembershipResponse {
     private Instant createdAt;
 
     public static MemberMembershipResponse from(MemberMembership m) {
+        return from(m, 0);
+    }
+
+    public static MemberMembershipResponse from(MemberMembership m, int actualPaymentCount) {
         String name = null;
         if (m.getMember() != null && m.getMember().getMemberProfile() != null) {
             name = m.getMember().getMemberProfile().getFullName();
@@ -44,6 +52,19 @@ public class MemberMembershipResponse {
             days = ChronoUnit.DAYS.between(Instant.now(), m.getEndDate());
         }
 
+        int pkgSessions = m.getMembershipPackage() != null && m.getMembershipPackage().getTotalSessions() != null
+                ? m.getMembershipPackage().getTotalSessions()
+                : 1;
+        int remaining = m.getRemainingSessions() != null ? m.getRemainingSessions() : 0;
+
+        int estimatedCount = remaining > pkgSessions
+                ? (int) Math.ceil((double) remaining / pkgSessions)
+                : 1;
+        int packageCount = Math.max(actualPaymentCount, estimatedCount);
+        int renewalCount = Math.max(0, packageCount - 1);
+        int totalAccumulatedSessions = packageCount * pkgSessions;
+        int usedSessions = Math.max(0, totalAccumulatedSessions - remaining);
+
         return MemberMembershipResponse.builder()
                 .id(m.getId())
                 .memberId(m.getMember() != null ? m.getMember().getId() : null)
@@ -51,8 +72,12 @@ public class MemberMembershipResponse {
                 .memberName(name)
                 .packageId(m.getMembershipPackage() != null ? m.getMembershipPackage().getId() : null)
                 .packageName(m.getMembershipPackage() != null ? m.getMembershipPackage().getName() : null)
-                .totalSessions(m.getMembershipPackage() != null ? m.getMembershipPackage().getTotalSessions() : null)
-                .remainingSessions(m.getRemainingSessions())
+                .totalSessions(pkgSessions)
+                .remainingSessions(remaining)
+                .packageCount(packageCount)
+                .renewalCount(renewalCount)
+                .totalAccumulatedSessions(totalAccumulatedSessions)
+                .usedSessions(usedSessions)
                 .startDate(m.getStartDate())
                 .endDate(m.getEndDate())
                 .daysRemaining(days)

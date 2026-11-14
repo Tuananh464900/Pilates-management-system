@@ -62,7 +62,10 @@ public class BookingResponse {
         }
 
         Instant now = Instant.now();
+        boolean isPast = b.getSession() != null && b.getSession().getEndTime() != null && !b.getSession().getEndTime().isAfter(now);
+
         boolean canCancel = b.getStatus() == BookingStatus.CONFIRMED &&
+                !isPast &&
                 b.getSession() != null &&
                 b.getSession().getStartTime().isAfter(now);
 
@@ -70,6 +73,11 @@ public class BookingResponse {
         if (canCancel && b.getSession() != null) {
             long minutesUntilStart = Duration.between(now, b.getSession().getStartTime()).toMinutes();
             isRefundable = minutesUntilStart >= 120;
+        }
+
+        BookingStatus status = b.getStatus();
+        if (status == BookingStatus.CONFIRMED && isPast) {
+            status = BookingStatus.ATTENDED;
         }
 
         return BookingResponse.builder()
@@ -87,7 +95,7 @@ public class BookingResponse {
                 .endTime(b.getSession() != null ? b.getSession().getEndTime() : null)
                 .membershipId(b.getMembership() != null ? b.getMembership().getId() : null)
                 .packageName(b.getMembership() != null && b.getMembership().getMembershipPackage() != null ? b.getMembership().getMembershipPackage().getName() : null)
-                .status(b.getStatus())
+                .status(status)
                 .refunded(b.getRefunded())
                 .cancelReason(b.getCancelReason())
                 .canceledAt(b.getCanceledAt())

@@ -50,6 +50,12 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     @Query("SELECT COALESCE(SUM(p.amount), 0) FROM Payment p WHERE p.status = 'PAID' AND p.paymentMethod = :method AND COALESCE(p.paidAt, p.createdAt) >= :from AND COALESCE(p.paidAt, p.createdAt) <= :to")
     BigDecimal calculatePaidRevenueBetweenAndMethod(@Param("from") Instant from, @Param("to") Instant to, @Param("method") PaymentMethod method);
 
+    @Query("SELECT COUNT(p) FROM Payment p WHERE p.membership.id = :membershipId AND p.status = 'PAID'")
+    long countPaidPaymentsByMembership(@Param("membershipId") Long membershipId);
+
+    @Query("SELECT COUNT(p) FROM Payment p WHERE p.member.id = :memberId AND p.membershipPackage.id = :packageId AND p.status = 'PAID'")
+    long countPaidPaymentsByMemberAndPackage(@Param("memberId") UUID memberId, @Param("packageId") Long packageId);
+
     @Query("SELECT COUNT(p) FROM Payment p WHERE p.status = :status")
     long countByStatus(@Param("status") PaymentStatus status);
 }
