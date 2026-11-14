@@ -22,6 +22,7 @@ public class AttendanceRecordResponse {
     private String memberEmail;
     private String memberPhone;
     private BookingStatus status;
+    private Instant bookedAt;
     private Instant updatedAt;
 
     public static AttendanceRecordResponse from(Booking b) {
@@ -39,6 +40,7 @@ public class AttendanceRecordResponse {
                 .memberEmail(b.getMember() != null ? b.getMember().getEmail() : null)
                 .memberPhone(phone)
                 .status(b.getStatus())
+                .bookedAt(b.getCreatedAt())
                 .updatedAt(b.getUpdatedAt())
                 .build();
     }

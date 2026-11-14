@@ -91,6 +91,7 @@ public class AttendanceService {
 
         return bookingRepository.findBySessionIdWithMember(sessionId)
                 .stream()
+                .filter(b -> b.getStatus() != BookingStatus.CANCELED)
                 .map(AttendanceRecordResponse::from)
                 .toList();
     }
@@ -106,6 +107,7 @@ public class AttendanceService {
 
         return bookingRepository.findBySessionIdWithMember(sessionId)
                 .stream()
+                .filter(b -> b.getStatus() != BookingStatus.CANCELED)
                 .map(AttendanceRecordResponse::from)
                 .toList();
     }

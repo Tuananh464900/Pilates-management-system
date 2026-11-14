@@ -44,7 +44,9 @@ export const TrainerAttendancePage: React.FC = () => {
         throw new Error(attendRes.data.message || 'Không thể tải danh sách điểm danh');
       }
 
-      const records: AttendanceRecordResponse[] = attendRes.data.data;
+      const records: AttendanceRecordResponse[] = (attendRes.data.data || []).filter(
+        (r: any) => r.status !== 'CANCELED'
+      );
       setAttendances(records);
 
       // Khởi tạo trạng thái ban đầu: nếu đã điểm danh trước đó thì giữ nguyên, mặc định là ATTENDED
@@ -274,7 +276,7 @@ export const TrainerAttendancePage: React.FC = () => {
                         {item.memberPhone || <span style={{ color: 'var(--text-subtle)' }}>N/A</span>}
                       </td>
                       <td style={{ padding: '0.75rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                        {new Date(item.bookedAt).toLocaleString('vi-VN')}
+                        {item.bookedAt ? new Date(item.bookedAt).toLocaleString('vi-VN') : 'N/A'}
                       </td>
                       <td style={{ padding: '0.75rem' }}>
                         <span className={`badge ${item.status === 'ATTENDED' ? 'badge-active' : item.status === 'ABSENT' ? 'badge-locked' : 'badge-scheduled'}`}>
