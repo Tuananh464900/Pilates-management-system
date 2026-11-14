@@ -176,7 +176,7 @@ Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tà
 ### Nhóm UC4: Đặt chỗ & Hủy lịch tập
 - [x] **UC4.1:** Xem danh sách buổi tập đang mở (chỉ hiển thị buổi chưa bắt đầu, cho phép đăng ký).
 - [x] **UC4.2:** Hội viên đặt chỗ buổi tập: Áp dụng **Khóa bi quan (Pessimistic Locking)** chống Race Condition khi nhiều người cùng đặt chỗ cuối, trừ 1 lượt nguyên tử.
-- [x] **UC4.3:** Xem danh sách lịch tập đã đặt chỗ cá nhân với hệ thống Tab lọc trực quan theo thời gian (*Sắp diễn ra, Đã tham gia, Đã hủy, Tất cả*). Tự động nhận diện và chuyển trạng thái `ATTENDED` (Đã tham gia) kèm khóa nút hủy đối với các buổi đã kết thúc.
+- [x] **UC4.3:** Xem danh sách lịch tập đã đặt chỗ cá nhân với hệ thống Tab lọc trực quan theo thời gian (*Sắp diễn ra, Đã tham gia, Đã hủy, Tất cả*). Phân định rõ trạng thái tham gia theo kết quả điểm danh của HLV (*Đã tham gia, Chờ điểm danh, Vắng mặt*) kèm khóa nút hủy đối với các buổi đã qua.
 - [x] **UC4.4:** Hội viên hủy đặt chỗ: Áp dụng **Biên thời gian 2 giờ** (Hủy trước $\ge 2$ tiếng được hoàn trả 1 lượt về đúng gói; hủy trong vòng 2 tiếng sát giờ không hoàn lượt).
 - [x] **UC4.5:** Xem thông báo xác nhận và cảnh báo trạng thái đặt/hủy chỗ trên giao diện người dùng.
 
@@ -201,7 +201,7 @@ mvn clean verify
 
 **Kết quả kiểm thử thực tế:**
 - **Unit & Integration Tests:** **73/73** (11 Test Classes, 100% Passed)
-- **Kịch bản Demo End-to-End (Slide 23–24):** **22/22 ca test** (4 Giai đoạn: Admin, Member, Trainer, Nghiệp vụ biên 2h & Xung đột, 100% Passed)
+- **Kịch bản Demo Vận hành (Slide 23–24):** 4 Giai đoạn vận hành cốt lõi (Admin lập lịch/duyệt gói, Member đặt/hủy chỗ, Trainer điểm danh, Kiểm soát xung đột lịch và quy tắc biên 2 giờ)
 - **Frontend Build:** `npm run build` $\rightarrow$ `dist/` 100% PASS (Vite v5.4.21, 0 errors)
 - **Failures:** 0 | **Errors:** 0 | **Skipped:** 0 | **Trạng thái:** `BUILD SUCCESS`
 

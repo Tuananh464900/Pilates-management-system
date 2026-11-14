@@ -23,6 +23,8 @@ Tài liệu này lưu trữ thông tin danh sách các tài khoản kiểm thử
 |  **MEMBER** (Học viên) | `nguyen12@gmail.com` | `MatKhauMoi123!` | Đã đổi thành công khi test UC1.4 *(Mật khẩu ban đầu: `Password123!`)* |
 
 >  **Mẹo đăng nhập:** Bạn có thể đăng nhập tại: [http://localhost:5173/login](http://localhost:5173/login). Sau khi đăng nhập, hệ thống sẽ tự động chuyển hướng và hiển thị menu điều hướng tương ứng với vai trò của bạn.
+> 
+>  **Lưu ý bảo mật:** Các thông tin tài khoản và mật khẩu trên được thiết lập dành riêng cho mục đích kiểm thử, chấm điểm đồ án và demo cục bộ. Tuyệt đối không tái sử dụng các mật khẩu này cho tài khoản cá nhân hoặc môi trường Production.
 
 ---
 

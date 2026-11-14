@@ -76,9 +76,6 @@ public class BookingResponse {
         }
 
         BookingStatus status = b.getStatus();
-        if (status == BookingStatus.CONFIRMED && isPast) {
-            status = BookingStatus.ATTENDED;
-        }
 
         return BookingResponse.builder()
                 .id(b.getId())

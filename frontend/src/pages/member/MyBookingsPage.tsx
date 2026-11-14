@@ -53,8 +53,7 @@ export const MyBookingsPage: React.FC = () => {
   };
 
   const isAttendedBooking = (b: Booking) => {
-    if (b.status === 'CANCELED' || b.status === 'ABSENT') return false;
-    return b.status === 'ATTENDED' || isPastBooking(b);
+    return b.status === 'ATTENDED';
   };
 
   const isUpcomingBooking = (b: Booking) => {
@@ -213,8 +212,10 @@ export const MyBookingsPage: React.FC = () => {
                     );
                   } else if (b.status === 'ABSENT') {
                     statusBadge = <span className="badge badge-warning">Vắng mặt</span>;
-                  } else if (isAttendedBooking(b)) {
+                  } else if (b.status === 'ATTENDED') {
                     statusBadge = <span className="badge badge-primary">Đã tham gia</span>;
+                  } else if (isPast) {
+                    statusBadge = <span className="badge" style={{ backgroundColor: '#fef3c7', color: '#92400e', border: '1px solid #fde68a' }}>Chờ điểm danh</span>;
                   } else {
                     statusBadge = <span className="badge badge-success">Sắp diễn ra</span>;
                   }
