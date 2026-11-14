@@ -120,10 +120,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           throw new Error('Vui lòng nhập mật khẩu tài khoản.');
         }
 
-        const { data, error } = await supabase.auth.signInWithPassword({
+        let authResult = await supabase.auth.signInWithPassword({
           email: trimmedEmail,
           password
         });
+
+        // Tự động thử lại với password đã cắt khoảng trắng nếu copy-paste vô tình dính dấu cách
+        if (authResult.error && password.trim() !== password) {
+          authResult = await supabase.auth.signInWithPassword({
+            email: trimmedEmail,
+            password: password.trim()
+          });
+        }
+
+        const { data, error } = authResult;
 
         if (error) {
           // Báo lỗi xác thực rõ ràng, tuyệt đối KHÔNG fallback sang mock trong production
