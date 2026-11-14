@@ -26,13 +26,15 @@ public class AdminDashboardResponse {
     private BigDecimal cashRevenue;
     private long unpaidPaymentsCount;
 
-    // Hội viên
+    // Hội viên & Huấn luyện viên (R5.5)
     private long totalMembers;
     private long activeMembers;
     private long lockedMembers;
     private long membersWithActivePackage;
+    private long totalTrainers;
 
-    // Buổi tập & Đặt chỗ
+    // Lớp học & Vận hành (R5.5)
+    private long activeClasses;
     private long totalSessions;
     private long scheduledSessions;
     private long completedSessions;

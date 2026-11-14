@@ -219,6 +219,12 @@ export const AdminDashboardPage: React.FC = () => {
                 <h2 style={{ fontSize: '2rem', color: 'var(--primary)', marginTop: '0.25rem' }}>{data.membersWithActivePackage}</h2>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Còn hạn & còn số lượt tập</p>
               </div>
+
+              <div className="card" style={{ borderLeft: '4px solid var(--accent-gold)' }}>
+                <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>HUẤN LUYỆN VIÊN (TRAINER)</span>
+                <h2 style={{ fontSize: '2rem', color: 'var(--accent-gold)', marginTop: '0.25rem' }}>{data.totalTrainers || 0}</h2>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Đội ngũ HLV trong hệ thống</p>
+              </div>
             </div>
           </div>
 
@@ -226,10 +232,16 @@ export const AdminDashboardPage: React.FC = () => {
           <div style={{ marginBottom: '2.5rem' }}>
             <h3 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Activity size={20} style={{ color: 'var(--accent-gold)' }} />
-              <span>Buổi tập & Tình hình Đặt chỗ</span>
+              <span>Buổi tập & Vận hành lớp</span>
             </h3>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1.25rem' }}>
+              <div className="card" style={{ borderLeft: '4px solid #8B5CF6' }}>
+                <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>LỚP TẬP HOẠT ĐỘNG</span>
+                <h2 style={{ fontSize: '1.8rem', color: '#8B5CF6', marginTop: '0.25rem' }}>{data.activeClasses || 0}</h2>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Mẫu lớp Pilates mở (ACTIVE)</p>
+              </div>
+
               <div className="card">
                 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 600 }}>TỔNG SỐ BUỔI TẬP</span>
                 <h2 style={{ fontSize: '1.8rem', marginTop: '0.25rem' }}>{data.totalSessions}</h2>

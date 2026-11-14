@@ -20,13 +20,15 @@ export interface AdminDashboardResponse {
   cashRevenue: number;
   unpaidPaymentsCount: number;
 
-  // Hội viên
+  // Hội viên & Huấn luyện viên (R5.5)
   totalMembers: number;
   activeMembers: number;
   lockedMembers: number;
   membersWithActivePackage: number;
+  totalTrainers: number;
 
-  // Buổi tập & Đặt chỗ
+  // Lớp học & Buổi tập (R5.5)
+  activeClasses: number;
   totalSessions: number;
   scheduledSessions: number;
   completedSessions: number;

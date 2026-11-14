@@ -10,6 +10,8 @@ import vn.n06g12.pilates.membership.entity.PaymentMethod;
 import vn.n06g12.pilates.membership.entity.PaymentStatus;
 import vn.n06g12.pilates.membership.repository.MemberMembershipRepository;
 import vn.n06g12.pilates.membership.repository.PaymentRepository;
+import vn.n06g12.pilates.pilatesclass.entity.ClassStatus;
+import vn.n06g12.pilates.pilatesclass.repository.PilatesClassRepository;
 import vn.n06g12.pilates.session.entity.SessionStatus;
 import vn.n06g12.pilates.session.repository.SessionRepository;
 import vn.n06g12.pilates.statistics.dto.AdminDashboardResponse;
@@ -35,6 +37,7 @@ public class StatisticsService {
     private final PaymentRepository paymentRepository;
     private final UserRepository userRepository;
     private final MemberMembershipRepository memberMembershipRepository;
+    private final PilatesClassRepository pilatesClassRepository;
 
     private static final ZoneId VIETNAM_ZONE = ZoneId.of("Asia/Ho_Chi_Minh");
 
@@ -44,13 +47,15 @@ public class StatisticsService {
             BookingRepository bookingRepository,
             PaymentRepository paymentRepository,
             UserRepository userRepository,
-            MemberMembershipRepository memberMembershipRepository
+            MemberMembershipRepository memberMembershipRepository,
+            PilatesClassRepository pilatesClassRepository
     ) {
         this.sessionRepository = sessionRepository;
         this.bookingRepository = bookingRepository;
         this.paymentRepository = paymentRepository;
         this.userRepository = userRepository;
         this.memberMembershipRepository = memberMembershipRepository;
+        this.pilatesClassRepository = pilatesClassRepository;
     }
 
     /**
@@ -110,6 +115,8 @@ public class StatisticsService {
         long activeMembers = userRepository.countByRoleAndStatus(Role.MEMBER, UserStatus.ACTIVE);
         long lockedMembers = userRepository.countByRoleAndStatus(Role.MEMBER, UserStatus.LOCKED);
         long membersWithActivePackage = memberMembershipRepository.countDistinctActiveMemberships(Instant.now());
+        long totalTrainers = userRepository.countByRole(Role.TRAINER);
+        long activeClasses = pilatesClassRepository.countByStatus(ClassStatus.ACTIVE);
 
         long totalSessions = sessionRepository.count();
         long scheduledSessions = sessionRepository.countByStatus(SessionStatus.SCHEDULED);
@@ -131,6 +138,8 @@ public class StatisticsService {
                 .activeMembers(activeMembers)
                 .lockedMembers(lockedMembers)
                 .membersWithActivePackage(membersWithActivePackage)
+                .totalTrainers(totalTrainers)
+                .activeClasses(activeClasses)
                 .totalSessions(totalSessions)
                 .scheduledSessions(scheduledSessions)
                 .completedSessions(completedSessions)

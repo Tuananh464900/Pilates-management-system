@@ -23,6 +23,8 @@ public interface PilatesClassRepository extends JpaRepository<PilatesClass, Long
 
     Page<PilatesClass> findByStatus(ClassStatus status, Pageable pageable);
 
+    long countByStatus(ClassStatus status);
+
     @Query("SELECT c FROM PilatesClass c WHERE " +
            "(:status IS NULL OR c.status = :status) AND " +
            "(:search IS NULL OR LOWER(c.name) LIKE :search)")
