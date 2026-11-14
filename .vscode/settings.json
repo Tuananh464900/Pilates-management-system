@@ -12,5 +12,27 @@
       "default": true
     }
   ],
-  "maven.terminal.useJavaHome": true
+  "maven.terminal.useJavaHome": true,
+  "java.import.exclusions": [
+    "**/node_modules/**",
+    "**/.metadata/**",
+    "**/archetype/**",
+    "**/META-INF/maven/**",
+    "**/frontend/**",
+    "**/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/**",
+    "**/target/**"
+  ],
+  "files.watcherExclude": {
+    "**/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/**": true,
+    "**/target/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/.git/**": true
+  },
+  "search.exclude": {
+    "**/N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/**": true,
+    "**/target/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true
+  }
 }
