@@ -170,20 +170,20 @@ Hệ thống đã hoàn thiện trọn vẹn **25/25 Use Cases** theo đúng tà
 - [x] **UC3.1:** Quản lý danh mục các gói tập Pilates (Gói 10 buổi, 20 buổi, 36 buổi, VIP 60 buổi).
 - [x] **UC3.2:** Hội viên chọn mua gói tập, tạo giao dịch thanh toán chờ duyệt (`UNPAID`).
 - [x] **UC3.3:** Admin xác nhận thanh toán (`PAID`): Tự động kích hoạt gói mới hoặc gia hạn cộng dồn số buổi và cộng thêm ngày sử dụng nguyên tử trong 1 Transaction.
-- [x] **UC3.4:** Cảnh báo hội viên khi gói tập sắp hết hạn ($\le 7$ ngày) hoặc sắp hết buổi ($\le 2$ lượt).
-- [x] **UC3.5:** Theo dõi chi tiết lịch sử giao dịch và hóa đơn thanh toán của hội viên.
+- [x] **UC3.4:** Quản lý thẻ hội viên thông minh: Hiển thị số gói đã đăng ký (mua mới + số lần gia hạn), tổng số buổi cấp, đã dùng và còn lại; cảnh báo khi gói sắp hết hạn ($\le 7$ ngày) hoặc sắp hết buổi ($\le 2$ lượt).
+- [x] **UC3.5:** Theo dõi chi tiết lịch sử giao dịch và hóa đơn thanh toán của hội viên, liên kết điều hướng mượt mà.
 
 ### Nhóm UC4: Đặt chỗ & Hủy lịch tập
 - [x] **UC4.1:** Xem danh sách buổi tập đang mở (chỉ hiển thị buổi chưa bắt đầu, cho phép đăng ký).
 - [x] **UC4.2:** Hội viên đặt chỗ buổi tập: Áp dụng **Khóa bi quan (Pessimistic Locking)** chống Race Condition khi nhiều người cùng đặt chỗ cuối, trừ 1 lượt nguyên tử.
-- [x] **UC4.3:** Xem danh sách các buổi tập đã đặt chỗ của cá nhân Hội viên.
+- [x] **UC4.3:** Xem danh sách lịch tập đã đặt chỗ cá nhân với hệ thống Tab lọc trực quan theo thời gian (*Sắp diễn ra, Đã tham gia, Đã hủy, Tất cả*). Tự động nhận diện và chuyển trạng thái `ATTENDED` (Đã tham gia) kèm khóa nút hủy đối với các buổi đã kết thúc.
 - [x] **UC4.4:** Hội viên hủy đặt chỗ: Áp dụng **Biên thời gian 2 giờ** (Hủy trước $\ge 2$ tiếng được hoàn trả 1 lượt về đúng gói; hủy trong vòng 2 tiếng sát giờ không hoàn lượt).
 - [x] **UC4.5:** Xem thông báo xác nhận và cảnh báo trạng thái đặt/hủy chỗ trên giao diện người dùng.
 
 ### Nhóm UC5: Điểm danh & Báo cáo Thống kê
-- [x] **UC5.1:** Xem danh sách học viên đã đặt chỗ của từng buổi tập (dành cho HLV phụ trách & Admin).
+- [x] **UC5.1:** Xem danh sách học viên đã đặt chỗ của từng buổi tập (dành cho HLV phụ trách & Admin), chặn điểm danh sớm trước giờ bắt đầu.
 - [x] **UC5.2:** HLV / Admin điểm danh học viên tại buổi tập (Có mặt / Vắng mặt). Học viên vắng mặt không được hoàn lại buổi tập.
-- [x] **UC5.3:** Học viên theo dõi lịch sử tập luyện và kết quả điểm danh cá nhân (`ATTENDED` / `ABSENT`).
+- [x] **UC5.3:** Học viên theo dõi lịch sử tập luyện và kết quả điểm danh cá nhân (`ATTENDED` / `ABSENT`), tự động đồng bộ thời gian thực.
 - [x] **UC5.4:** Dashboard Báo cáo Doanh thu & Thống kê dành cho Quản trị viên (bộ lọc tháng/năm, doanh thu thực nhận từ đơn `PAID`, tỷ lệ lấp đầy lớp, tổng số hội viên active).
 
 ---
@@ -200,10 +200,10 @@ mvn clean verify
 ```
 
 **Kết quả kiểm thử thực tế:**
-- **Tests run:** **73/73** (11 Test Classes)
-- **Failures:** 0 | **Errors:** 0 | **Skipped:** 0
-- **Trạng thái:** `BUILD SUCCESS` (100% Passed)
+- **Unit & Integration Tests:** **73/73** (11 Test Classes, 100% Passed)
+- **Kịch bản Demo End-to-End (Slide 23–24):** **22/22 ca test** (4 Giai đoạn: Admin, Member, Trainer, Nghiệp vụ biên 2h & Xung đột, 100% Passed)
 - **Frontend Build:** `npm run build` $\rightarrow$ `dist/` 100% PASS (Vite v5.4.21, 0 errors)
+- **Failures:** 0 | **Errors:** 0 | **Skipped:** 0 | **Trạng thái:** `BUILD SUCCESS`
 
 ### Chi tiết 11 Test Classes (Nghiệp vụ, An toàn tương tranh & Bảo mật):
 1. `AttendanceAndStatsTest` (7 tests): Điểm danh có mặt/vắng mặt, thống kê doanh thu tháng/năm, KPI giảng dạy HLV, chặn điểm danh buổi đã hủy.
