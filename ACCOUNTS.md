@@ -1,5 +1,9 @@
 # DANH SÁCH TÀI KHOẢN HỆ THỐNG GLOW PILATES (N06-12)
 
+> 🔒 **CẢNH BÁO BẢO MẬT & MỤC ĐÍCH SỬ DỤNG:**
+> - Toàn bộ tài khoản và mật khẩu dưới đây là **dữ liệu giả lập (Mock / Seed Data)** được tạo tự động bởi các migration SQL (`V2__seed_admin_account.sql`, `V4__seed_membership_packages.sql`) phục vụ riêng cho mục đích **chấm bài, nghiệm thu đồ án của Giảng viên và chạy thử nghiệm cục bộ (Local Testing)**.
+> - **TUYỆT ĐỐI KHÔNG** sử dụng các mật khẩu này cho bất kỳ tài khoản cá nhân hoặc hệ thống Production thực tế nào. Trước khi triển khai môi trường thật, hệ thống bắt buộc phải thay đổi toàn bộ khóa JWT secret, mật khẩu cơ sở dữ liệu và cấu hình tài khoản quản trị viên riêng biệt.
+
 Tài liệu này lưu trữ thông tin danh sách các tài khoản kiểm thử chính thức cho 3 vai trò (**ADMIN**, **TRAINER**, **MEMBER**) trong hệ thống quản lý phòng tập Pilates, kèm theo quyền hạn, phạm vi nghiệp vụ và hướng dẫn sử dụng.
 
 ---
