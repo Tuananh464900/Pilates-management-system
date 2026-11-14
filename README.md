@@ -135,10 +135,6 @@ npm run dev
 
 ## 6. Tài khoản Kiểm thử Đăng nhập
 
-> 🔒 **CẢNH BÁO BẢO MẬT & MỤC ĐÍCH SỬ DỤNG:**
-> - Toàn bộ tài khoản và mật khẩu dưới đây là **dữ liệu giả lập (Mock / Seed Data)** được tạo tự động bởi các migration SQL (`V2__seed_admin_account.sql`, `V4__seed_membership_packages.sql`) phục vụ riêng cho mục đích **chấm bài của Giảng viên và chạy thử nghiệm cục bộ (Local Testing)**.
-> - **TUYỆT ĐỐI KHÔNG** sử dụng các mật khẩu này cho bất kỳ tài khoản cá nhân hoặc hệ thống Production thực tế nào. Trước khi triển khai môi trường thật, hệ thống bắt buộc phải thay đổi toàn bộ khóa JWT secret, mật khẩu cơ sở dữ liệu và cấu hình tài khoản quản trị viên riêng biệt.
-
 Hệ thống đã chuẩn bị sẵn tài khoản mẫu cho cả 3 vai trò với mật khẩu mặc định: `Password123!`
 
 | Vai trò | Email đăng nhập | Mật khẩu | Quyền hạn & Chức năng chính |
