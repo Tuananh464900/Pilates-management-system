@@ -35,7 +35,9 @@ pnpm-debug.log*
 *.zip
 *.tar.gz
 *.docx
+*.pptx
 *.pdf
+mvn_test_result.txt
 antigravity_pilates_kit.zip
 export_for_report/
 N06_12_SAD_Quan_Ly_Phong_Tap_Pilates/
