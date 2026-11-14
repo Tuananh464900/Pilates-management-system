@@ -276,19 +276,9 @@ public class BookingService {
         log.info("Đã hủy và hoàn lượt cho {} học viên của buổi tập {}", confirmedBookings.size(), sessionId);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public Page<BookingResponse> getMyBookings(UUID memberId, Pageable pageable) {
         Page<Booking> page = bookingRepository.findByMemberIdWithDetails(memberId, pageable);
-        Instant now = Instant.now();
-        for (Booking b : page.getContent()) {
-            if (b.getStatus() == BookingStatus.CONFIRMED &&
-                    b.getSession() != null &&
-                    b.getSession().getEndTime() != null &&
-                    b.getSession().getEndTime().isBefore(now)) {
-                b.setStatus(BookingStatus.ATTENDED);
-                bookingRepository.save(b);
-            }
-        }
         return page.map(BookingResponse::from);
     }
 
